@@ -1,0 +1,85 @@
+enum BlogStatus {
+  BROUILLON
+  PUBLIÉ
+  ARCHIVÉ
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id          String     @id @default(cuid())
+  fullName    String     @db.VarChar(50)
+  email       String
+  type        String     @default("general")
+  category    String?    @db.VarChar(100)
+  phone       String?
+  message     String
+  country     String?    @db.VarChar(50)
+  status      String     @default("Non débuté")
+  linkedin    String?    @db.VarChar(100)
+  company     String?    @db.VarChar(50)
+  formationId String?    @db.VarChar(50)
+  formation   Formation? @relation(fields: [formationId], references: [id], onDelete: Cascade)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("contacts")
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  fullName  String   @db.VarChar(50)
+  email     String   @unique
+  phone     String?
+  country   String?  @db.VarChar(50)
+  status    String   @default("En cours")
+  linkedin  String?  @db.VarChar(100)
+  company   String?  @db.VarChar(50)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("clients")
+}
+
+model Blog {
+  id        String     @id @default(cuid())
+  title     String     @db.VarChar(100)
+  slug      String     @unique @db.VarChar(100)
+  content   String     @db.Text
+  date      String     @db.VarChar(10)
+  thumbnail String     @db.VarChar(250)
+  author    String     @db.VarChar(100)
+  views     Int        @default(0)
+  excerpt   String     @db.VarChar(150)
+  status    BlogStatus @default(BROUILLON)
+  tags      String?    @db.VarChar(100)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Formation {
+  id        String     @id @default(cuid())
+  title     String     @db.VarChar(100)
+  slug      String     @db.VarChar(100)
+  content   String     @db.Text
+  thumbnail String     @db.VarChar(250)
+  price     Float      @default(0)
+  excerpt   String     @db.VarChar(150)
+  status    BlogStatus @default(BROUILLON)
+  tags      String?    @db.VarChar(100)
+  place     String?    @db.VarChar(100)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  contacts  Contact[]
+
+  @@map("formations")
+}
