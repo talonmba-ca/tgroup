@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import LookingFor from '@/components/home/looking-for'
 import WhyUs from '@/components/home/why-us'
 import { Slider } from '@/components/global/Slider'
 import Stats from '@/components/home/stats'
