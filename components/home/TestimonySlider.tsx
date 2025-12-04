@@ -13,38 +13,39 @@ interface SlideData {
 
 const slideData: SlideData[] = [
   {
-    id: 1,
+    id: 6,
     testimony:
-      "Je tiens à exprimer ma sincère gratitude pour l'excellent service que j'ai reçu de l'entreprise TALONMBA. Chaque étape a été réalisé avec professionnalisme.",
-    name: 'Ministère et Organisme gouvernemental',
-    role: 'Direction des ressources humaines'
+      'La collaboration avec Talonmba a été remarquable. Leur expertise en TI et leur professionnalisme ont véritablement renforcé nos opérations internes.',
+    name: 'Institution Publique',
+    role: 'Directeur de la transformation numérique'
   },
   {
-    id: 2,
+    id: 7,
     testimony:
-      'Talonmba a transformé notre approche de la formation. Leur expertise et leur engagement ont fait une différence significative dans notre organisation.',
-    name: 'Entreprise Innovante',
-    role: 'Directeur des opérations'
+      'Talonmba nous a guidés avec une approche structurée et humaine. Leur accompagnement a eu un impact positif et durable sur nos équipes.',
+    name: 'Organisation Communautaire',
+    role: 'Coordonnatrice des services'
   },
   {
-    id: 3,
+    id: 8,
     testimony:
-      'Grâce à Talonmba, nous avons pu améliorer nos processus de formation et atteindre nos objectifs plus rapidement. Leur équipe est exceptionnelle.',
-    name: 'Start-up Technologique',
-    role: 'Responsable des ressources humaines'
+      'Nous avons particulièrement apprécié la rigueur et la disponibilité de l’équipe Talonmba. Ils livrent toujours des résultats concrets.',
+    name: 'Entreprise de Services',
+    role: 'Vice-président aux opérations'
   },
   {
-    id: 4,
+    id: 9,
     testimony:
-      "L'approche personnalisée de Talonmba a été un atout majeur pour notre équipe. Nous avons vu une amélioration notable dans nos performances.",
-    name: 'Grande Entreprise',
-    role: 'Chef de projet'
+      'L’expertise en cybersécurité de Talonmba a dépassé toutes nos attentes. Leur intervention a sécurisé nos systèmes et amélioré nos pratiques.',
+    name: 'Société Financière',
+    role: 'Directeur de la sécurité informatique'
   },
   {
-    id: 5,
-    testimony: 'Talonmba a su comprendre nos besoins spécifiques et y répondre de manière efficace. Leur service est de haute qualité.',
-    name: 'PME Locale',
-    role: 'Directrice générale'
+    id: 10,
+    testimony:
+      'Professionnels, efficaces et attentifs à nos besoins. Talonmba est un partenaire de confiance sur lequel nous pouvons compter.',
+    name: 'Organisation Internationale',
+    role: 'Responsable des partenariats'
   }
 ]
 
@@ -77,7 +78,7 @@ export const TestimonySlider: React.FC = () => {
 
   return (
     <div
-      className='w-full  overflow-hidden bg-primary2 '
+      className='w-full  overflow-hidden bg-primary '
       // h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}

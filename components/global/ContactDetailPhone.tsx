@@ -16,8 +16,8 @@ const ContactDetailPhone = ({ dark = false }: { dark?: boolean }) => {
           'text-gray-300': dark
         })}
       >
-        <a href='mailto:infos@talonmba.ca'>infos@talonmba.ca</a> <br />
-        <a href='tel:+14185278842'>(+1) 418 527 8842</a>
+        <a href='mailto:info@talonmba.com'>info@talonmba.com</a> <br />
+        <a href='tel:+14185615574'>(+1) 418 561 5574</a>
       </p>
     </li>
   )

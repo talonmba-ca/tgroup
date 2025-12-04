@@ -126,8 +126,6 @@ const PartnersSection: React.FC = () => {
 
   const scrollToDirection = (direction: 'left' | 'right') => {
     if (!carouselRef.current) return
-    console.log('object')
-
     const scrollAmount = itemWidth * 2
     const currentScroll = carouselRef.current.scrollLeft
 

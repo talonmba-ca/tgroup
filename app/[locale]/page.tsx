@@ -61,7 +61,7 @@ const FormationHome = () => {
           {/* WHO AM I */}
           {/* <WhoAmI /> */}
           {/* <Stats /> */}
-          <PartnersSection />
+          {/* <PartnersSection /> */}
           <TestimonySlider />
           {/*  */}
           {/* <TestimonialCard

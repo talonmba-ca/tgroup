@@ -24,24 +24,46 @@ export const metadata: Metadata = {
   //   ]
   // }
 }
+
 const faQuestions = [
   {
-    question: 'Qu’est-ce que Talonmba Formation ?',
+    question: 'Qu’est-ce que Talonmba ?',
     answer:
-      'Talonmba Formation est une plateforme dédiée à la formation professionnelle et au développement des compétences. Notre mission est de rentabiliser les programmes de développement des compétences dans les grandes organisations en formant autrement les employés et en transformant positivement leur rapport aux changements'
+      'Talonmba est une organisation spécialisée en technologies de l’information, cybersécurité, intelligence artificielle, formation professionnelle et logistique. Nous aidons les organisations à accroître leur performance grâce à des solutions modernes, sécurisées et adaptées.'
   },
   {
-    question: 'Combien coûte l’inscription à Talonmba Formation ?',
-    answer: 'L’inscription à Talonmba Formation est gratuite.'
-  },
-  {
-    question: 'Puis-je accéder à Talonmba Formation sur tous les appareils ?',
-    answer: `Oui, Talonmba Formation est accessible sur tous les appareils, y compris les ordinateurs, les tablettes et les smartphones.`
-  },
-  {
-    question: 'Comment puis-je contacter Talonmba Formation ?',
+    question: 'Quels services offre Talonmba ?',
     answer:
-      "Vous pouvez nous contacter par email à <a class='text-primary hover:underline' target='_blank' href='mailto:infos@talonmba.ca'>infos@talonmba.ca</a> ou visiter <a class='text-primary hover:underline' target='_blank' href='https://www.formation.talonmba.ca/contact'>notre page de contact</a> pour plus d’informations."
+      'Nous offrons des services en cybersécurité, intelligence artificielle, infonuagique, développement technologique, formation professionnelle sur mesure et logistique entre le Canada et l’Afrique.'
+  },
+  {
+    question: 'À qui s’adressent les services de Talonmba ?',
+    answer:
+      'Nos services s’adressent aux entreprises, institutions, organisations gouvernementales ainsi qu’aux professionnels souhaitant développer leurs compétences ou améliorer leur environnement technologique.'
+  },
+  {
+    question: 'Talonmba propose-t-il des formations sur mesure ?',
+    answer:
+      'Oui, nous concevons des programmes de formation adaptés aux besoins des organisations : cybersécurité, IA, transformation numérique, gestion du changement, et développement professionnel.'
+  },
+  {
+    question: 'Offrez-vous un accompagnement pour les nouveaux arrivants au Québec ?',
+    answer:
+      'Oui. Talonmba offre un accompagnement pour étudier, travailler et s’intégrer au Québec : orientation, préparation, coaching et développement de compétences adaptées au marché local.'
+  },
+  {
+    question: 'Comment puis-je collaborer avec Talonmba ?',
+    answer:
+      "Vous pouvez nous écrire à <a class='text-primary hover:underline' target='_blank' href='mailto:info@talonmba.com'>info@talonmba.com</a> ou visiter <a class='text-primary hover:underline' target='_blank' href='https://talonmba.ca/contact'>notre page de contact</a> pour discuter de vos besoins."
+  },
+  {
+    question: 'Les services de Talonmba sont-ils disponibles à l’international ?',
+    answer: 'Oui. Talonmba est présent au Canada et au Cameroun, et intervient sur plusieurs marchés en Amérique du Nord et en Afrique.'
+  },
+  {
+    question: 'Puis-je accéder aux formations Talonmba sur n’importe quel appareil ?',
+    answer:
+      'Oui, nos formations en ligne, documents et ressources sont accessibles sur ordinateur, tablette et smartphone pour une expérience flexible et intuitive.'
   }
 ]
 

@@ -1,3 +1,4 @@
+import { Book, Briefcase, Container, ShieldAlert } from 'lucide-react'
 import React from 'react'
 
 const OurServices = () => {
@@ -5,57 +6,32 @@ const OurServices = () => {
     <section className='py-12 bg-gray-50 sm:py-16 lg:py-20'>
       <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className='max-w-xl mx-auto text-center xl:max-w-2xl'>
-          <h2 className='text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj'>
-            {`L'intégration des nouveaux arrivants au Québec `}
-          </h2>
+          <h2 className='text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj'>{`NOS SERVICES`}</h2>
         </div>
 
         <div className='grid max-w-4xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 sm:mt-12 lg:mt-20 sm:text-left'>
           <div className='space-y-4 sm:space-y-8'>
             <div className='overflow-hidden bg-white shadow-md rounded-xl'>
               <div className='p-9'>
-                <svg
-                  className='w-12 h-12 mx-auto text-gray-400 sm:mx-0'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='1'
-                    d='M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-                  />
-                </svg>
-                <h3 className='mt-8 text-2xl font-bold text-gray-900 sm:mt-20 font-pj'>Travailler au Quebec</h3>
+                <Briefcase className='w-12 h-12 mx-auto text-gray-400 sm:mx-0' />
+                <h3 className='mt-8 text-2xl font-bold text-gray-900 font-pj'>Étudier et Travailler au Québec</h3>
                 <p className='mt-6 text-base text-gray-600 font-pj'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend nullam consectetur placerat pellentesque ut massa
-                  volutpat at. Diam pretium orci dui sagittis.
+                  Nous accompagnons les nouveaux arrivants dans leur intégration académique et professionnelle. Que ce soit pour poursuivre
+                  des études, obtenir une équivalence, choisir un programme, ou s’insérer sur le marché de l’emploi, nous offrons un soutien
+                  personnalisé à chaque étape.
                 </p>
               </div>
             </div>
 
             <div className='overflow-hidden bg-white shadow-md rounded-xl'>
               <div className='p-9'>
-                <svg
-                  className='w-12 h-12 mx-auto text-gray-400 sm:mx-0'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='1'
-                    d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'
-                  />
-                </svg>
-                <h3 className='mt-8 text-2xl font-bold text-gray-900 sm:mt-20 font-pj'>Etudier au Canada</h3>
+                <ShieldAlert className='w-12 h-12 mx-auto text-gray-400 sm:mx-0' />
+                <h3 className=' text-2xl font-bold text-gray-900 mt-8 font-pj'>
+                  Technologie de l’Information, Cybersécurité et Intelligence Artificielle
+                </h3>
                 <p className='mt-6 text-base text-gray-600 font-pj'>
-                  Eleifend nullam consectetur placerat pellentesque ut massa volutpat at. Diam pretium orci dui sagittis. Norem ipsum dolor
-                  sit amet, consectetur adipiscing elit.
+                  Fournir des solutions de technologie de l’information complètes incluant la cybersécurité, l’infonuagique et
+                  l’intelligence artificielle adaptées aux besoins des entreprises et des particuliers en Amérique du Nord et en Afrique.
                 </p>
               </div>
             </div>
@@ -74,27 +50,11 @@ const OurServices = () => {
 
               <div className='relative overflow-hidden bg-white shadow-md rounded-xl'>
                 <div className='p-9'>
-                  <svg
-                    className='w-12 h-12 mx-auto text-gray-400 sm:mx-0'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='1'
-                      d='M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z'
-                    />
-                  </svg>
-                  <h3 className='mt-8 text-2xl font-bold text-gray-900 sm:mt-20 font-pj'>Cybersecurité et securité</h3>
+                  <Container className='w-12 h-12 mx-auto text-gray-400 sm:mx-0' />
+                  <h3 className='mt-8 text-2xl font-bold text-gray-900 font-pj'>Transport et Logistique</h3>
                   <p className='mt-6 text-base text-gray-600 font-pj'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend nullam consectetur placerat pellentesque ut massa
-                    volutpat at. Diam pretium orci dui sagittis.
-                  </p>
-                  <p className='mt-6 text-base text-gray-600 font-pj'>
-                    Eleifend nullam consectetur placerat pelle tesque ut massa volutpat bonur los.
+                    Assurer une circulation fluide, fiable et sécurisée des marchandises entre le Canada et le Cameroun, en offrant des
+                    solutions logistiques intégrées et adaptées aux besoins des entreprises.
                   </p>
                 </div>
               </div>
@@ -102,24 +62,11 @@ const OurServices = () => {
 
             <div className='overflow-hidden bg-white shadow-md rounded-xl'>
               <div className='p-9'>
-                <svg
-                  className='w-12 h-12 mx-auto text-gray-400 sm:mx-0'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='1'
-                    d='M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
-                  />
-                </svg>
-                <h3 className='mt-8 text-2xl font-bold text-gray-900 sm:mt-20 font-pj'>Formations</h3>
+                <Book className='w-12 h-12 mx-auto text-gray-400 sm:mx-0' />
+                <h3 className='mt-8 text-2xl font-bold text-gray-900 font-pj'>Formation et Développement des Compétences</h3>
                 <p className='mt-6 text-base text-gray-600 font-pj'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend nullam consectetur placerat pellentesque ut massa
-                  volutpat at. Diam pretium orci dui sagittis.
+                  Transformer l’apprentissage en entreprise grâce à des programmes sur mesure, axés sur des compétences pratiques, actuelles
+                  et immédiatement applicables pour optimiser la performance individuelle et organisationnelle
                 </p>
               </div>
             </div>

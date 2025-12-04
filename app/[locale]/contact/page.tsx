@@ -4,16 +4,13 @@ import FormError from '@/components/errors/FormError'
 import ContactDetails from '@/components/global/ContactDetails'
 import FormGroup from '@/components/global/FormGroup'
 import Input from '@/components/global/Input'
-import Select from '@/components/global/Select'
 import { SubmitButton } from '@/components/global/SubmitButton'
-import { STRATEGIES } from '@/lib/utils'
 import { useSearchParams } from 'next/navigation'
 import { useActionState } from 'react'
 
 const Contact = () => {
   const sp = useSearchParams()
 
-  const str = sp.get('strategy') ? STRATEGIES.find((s) => s.options.some((o) => o.id === sp.get('strategy'))) : undefined
   // Initialize form state
   const initialState: PrevState = {
     message: null,
@@ -23,7 +20,7 @@ const Contact = () => {
       email: '',
       phone: '',
       message: '',
-      type: 'Formation',
+      type: 'General',
       formationId: sp.get('f') || undefined
     }
   }
@@ -83,14 +80,6 @@ const Contact = () => {
                       hasError={state.errors?.phone}
                     />
                   </FormGroup>
-                  {str && (
-                    <Select
-                      name='category'
-                      label={str?.title || 'Catégorie'}
-                      defaultValue={str.options.find((o) => o.id === sp.get('strategy'))?.title || ''}
-                      options={['Tout', ...(str.options.map((s) => s.title) || [])]}
-                    />
-                  )}
                   <Input
                     label='Message'
                     name='message'

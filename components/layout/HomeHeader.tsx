@@ -68,11 +68,12 @@ const NabarItems = ({ mobile = false }: { mobile?: boolean }) => {
                   }
                 )}
               >
-                <div className={cn('pt-[46px]', { 'pt-[40px]': mobile })}></div>
+                <div className={cn('pt-[32px]', { 'pt-[40px]': mobile })}></div>
                 <div className='flex flex-col bg-white  shadow-1  rounded-lgd overflow-hidden z-10'>
                   {item.subMenu.map((menu) => (
                     <Link
                       key={menu.link}
+                      target={menu.link!.startsWith('http') ? '_blank' : '_self'}
                       className={`hover:text-primary2  px-4 py-2 transition-all ${
                         pn === menu.link ? 'text-primary2 underline  pointer-events-none' : ''
                       }`}
@@ -119,7 +120,7 @@ const HomeHeader = ({ className, ...rest }: HomeHeaderProps) => {
           <div className='flex items-center gap-x-3  '>
             <ToggleNavMobile />
             <Link href='/' className='flex items-center gap-x-2'>
-              <FadeInImage path='/images/talonmba.jpeg' className='aspect-auto w-20 md:w-48' imageClassName='aspect-auto' />
+              <FadeInImage path='/images/group.svg' className='aspect-auto w-20 md:w-48' imageClassName='aspect-auto' />
             </Link>
           </div>
           <nav className='hidden lg:flex flex-1 items-center justify-center'>

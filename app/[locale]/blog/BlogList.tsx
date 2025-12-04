@@ -1,28 +1,36 @@
 import FadeInImage from '@/components/global/FadeInImage'
-import prisma from '@/lib/prisma'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import React from 'react'
 import ArticleReadTime from './ArticleReadTime'
+import { Blog } from '@/interfaces'
 
 const BlogList = async () => {
-  const articles = await prisma.blog.findMany({ where: { status: 'PUBLIÉ' } })
-  if (!articles || articles.length === 0)
+  // const articles = await prisma.blog.findMany({ where: { status: 'PUBLIÉ' } })
+  const articles = await fetch(`${process.env.BASE_URL_API}/blogs/paginate?page=1&take=10&status=PUBLIÉ&site=GROUP`, {
+    headers: {
+      'Content-Type': 'application/json',
+      [process.env.GUEST_TOKEN_NAME as string]: process.env.GUEST_TOKEN_VALUE!
+    }
+  }).then((r) => r.json())
+
+  if (!articles || articles.data.length === 0)
     return (
       <div className='mt-12 flex flex-col items-center justify-center gap-4 max-w-xl mx-auto p-6 rounded-lg shadow-1 bg-white'>
-        <h1 className='text-2xl font-bold text-center text-primary2'>{" Nous n'avons pas encore d'articles de blog publiés."}</h1>
-        <p className='text-center text-gray-500'>Veuillez revenir plus tard.</p>
+        <h1 className='text-2xl font-bold text-center text-primary2'>{" Nous n'avons pas encore d'articles."}</h1>
+        {/* <p className='text-center text-gray-500'>Veuillez revenir plus tard.</p> */}
       </div>
     )
 
   return (
     <div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-6 p-6 justify-start items-start'>
-        {articles.map((art) => (
+        {articles.data.map((art: Blog) => (
           <div key={art.id} className='bg-white shadow-2 hover:shadow-1  group  rounded overflow-hidden cursor-pointer p-2.5'>
             <Link href={`/blog/${art.slug}`} className='cursor-pointer'>
               <FadeInImage
                 path={art.thumbnail}
+                allClass='aspect-video'
                 imageClassName='group-hover:scale-110 duration-500 transition-transform rounded-md group-hover:rounded-none'
               />
             </Link>

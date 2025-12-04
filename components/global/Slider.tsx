@@ -17,21 +17,39 @@ interface SlideData {
 const slideData: SlideData[] = [
   {
     id: 1,
-    title: 'Rentabiliser vos formations et donner du sens aux changements',
-    subtitle: `Concevez des formations pour relever des défis liés au contexte de travail\nTransformez ensemble positivement votre rapport aux changements constants\nAtteignez vos objectifs de réussite plus rapidement`,
-    buttonText: 'Prendre un rendez-vous',
-    href: 'https://calendly.com/reinefoumbue/30min',
-    image: 'https://res.cloudinary.com/dd6fn2egg/image/upload/v1753975393/samples/balloons.jpg',
-    imageAlt: 'Laptop showing online shopping interface'
+    title: 'Nos formations structurées',
+    subtitle: `Formez-vous efficacement avec des objectifs clairs et des contenus adaptés à vos besoins réels pour avancer rapidement dans vos dossiers organisationnels.`,
+    buttonText: 'En savoir plus',
+    href: 'https://formation.talonmba.com',
+    image: 'https://res.cloudinary.com/dd6fn2egg/image/upload/v1754425019/formation-structuree-front_zwreex.jpg',
+    imageAlt: 'Mobile phone with shopping app'
   },
   {
     id: 2,
-    title: 'Nos formations structurées',
-    subtitle: `Dans la même approche pragmatique, nous vous proposons des formations prédéfinies avec des objectifs clairs et des compétences spécifiques et précises à développer, mais avec des contenus et des méthodes d'évaluation adaptés à vos besoins et à votre réalité. De cette manière, vous développerez vos compétences tout en améliorant votre productivité pendant la formation.`,
-    buttonText: 'Voir nos formations',
-    href: '/formations',
-    image: 'https://res.cloudinary.com/dd6fn2egg/image/upload/v1753980943/2150062133_y0bvma.jpg',
+    title: 'TI, Cybersécurité et Intelligence Artificielle',
+    subtitle: `Fournir des solutions de technologie de l’information complètes incluant la cybersécurité, l’infonuagique et l’intelligence artificielle adaptées aux besoins des entreprises et des particuliers en Amérique du Nord et en Afrique.`,
+    buttonText: 'En savoir plus',
+    href: 'https://security.talonmba.com',
+    image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg',
     imageAlt: 'Mobile phone with shopping app'
+  },
+  {
+    id: 3,
+    title: 'Transport et Logistique',
+    subtitle: `Assurer une circulation fluide, fiable et sécurisée des marchandises entre le Canada et le Cameroun, en offrant des solutions logistiques intégrées et adaptées aux besoins des entreprises.`,
+    buttonText: 'En savoir plus',
+    href: 'https://logistic.talonmba.com',
+    image: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
+    imageAlt: 'Laptop showing online shopping interface'
+  },
+  {
+    id: 4,
+    title: 'Étudier et Travailler au Québec',
+    subtitle: `Échangeons sur vos défis pour créer des formations et des interventions sur mesure qui maximisent l’impact et facilitent le changement durable dans votre organisation.`,
+    buttonText: 'En savoir plus',
+    href: 'https://study.talonmba.com',
+    image: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg',
+    imageAlt: 'Laptop showing online shopping interface'
   }
 ]
 
@@ -65,7 +83,7 @@ export const Slider: React.FC = () => {
   return (
     <div
       className='relative w-full overflow-hidden'
-      style={{ height: 'calc(100vh - 130px)' }} // Adjust height as needed
+      style={{ height: 'calc(100vh - 10rem)' }}
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
     >
@@ -99,18 +117,24 @@ export const Slider: React.FC = () => {
             className='w-full h-full flex-shrink-0 relative bg-cover bg-center bg-no-repeat'
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div className='absolute inset-0 bg-black/30 backdrop-blur-[1px]' />
+            <div className='absolute inset-0 bg-black/60 backdrop-blur-[1px]' />
 
             <div className='relative z-10 h-full flex items-center px-12 md:px-16 max-w-[1280px] mx-auto w-full'>
               {/* Content Section */}
-              <div className='text-white space-y-4 md:space-y-6 max-w-lg lg:max-w-xl'>
-                <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold leading-tight'>{slide.title}</h1>
-                <p className='text-sm md:text-lg lg:text-xl text-white/80 leading-relaxed'>{slide.subtitle}</p>
-
+              <div className='text-white space-y-4 md:space-y-6'>
+                <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-lg lg:max-w-2xl'>{slide.title}</h1>
+                <p className='text-base md:text-lg lg:text-xl text-white/90 font-medium leading-relaxed max-w-lg lg:max-w-3xl'>
+                  {slide.subtitle.split('\n').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index < slide.subtitle.split('\n').length - 1 && <br />}
+                    </span>
+                  ))}
+                </p>
                 <Link
                   href={slide.href}
-                  target={slide.id === 1 ? '_blank' : '_self'}
-                  className='inline-flex items-center justify-center flex-shrink-0 w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 rounded-md sm:mt-0  sm:w-auto gap-x-4 hover:bg-primary-700 focus:bg-primary bg-gradient-to-r from-primary via-primary  to-primary2 text-lg group'
+                  target='_blank'
+                  className='inline-flex items-center justify-center flex-shrink-0 px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 rounded-md sm:mt-0  sm:w-auto gap-x-4 hover:bg-primary-700 focus:bg-primary bg-gradient-to-r from-primary via-primary  to-primary2 text-lg group w-full'
                 >
                   <span> {slide.buttonText}</span>
                   <ArrowRight className='group-hover:translate-x-1 opacity-20 group-hover:opacity-100 transition-all duration-300' />

@@ -1,19 +1,17 @@
 import React from 'react'
 const questions = [
   {
-    id: '1',
+    id: '3',
     title:
-      'Vous n’avez pas une vue d’ensemble des compétences à développer chez vous ou chez votre personnel pour atteindre vos objectifs stratégiques?',
-    description: 'Nous vous aidons à identifier les compétences clés à développer pour atteindre vos objectifs organisationnels.',
+      'Vous soupirez après une mobilisation et un engagement de vos équipes pour faire face aux multiples changements nécessaires ou imposés à votre organisation?',
+    description: 'Nous travaillons avec vous pour mobiliser et engager vos équipes dans le processus de changement.',
     answer: {
-      title: 'Réponse à vos besoins de ',
+      title: 'Un engagement client sans compromis',
       items: [
-        'Performance immédiate',
-        'Flexibilité et adaptabilité',
-        'Développement de compétences spécifiques',
-        'Optimisation et réduction des coûts',
-        'Mesure de l’impact des formations et des changements',
-        'Renforcement de la motivation et de la satisfaction du personnel'
+        'Écoute active et collaboration réelle',
+        'Professionnalisme et disponibilité',
+        'Accompagnement personnalisé',
+        'Résultats mesurables et fiabilité constante        '
       ]
     }
   },
@@ -22,24 +20,29 @@ const questions = [
     title: 'Votre personnel ou vous-même avez tendance à subir les changements organisationnels et à devenir inefficaces et improductifs?',
     description: 'Nous proposons des formations pour aider votre équipe à s’adapter aux changements de manière proactive.',
     answer: {
-      title: 'Dans une approche pragmatique et agile qui favorise  ',
+      title: 'Une approche pragmatique et agile',
       items: [
-        'L’orientation et la satisfaction client',
-        'La construction de sens de l’action',
-        'L’autonomisation du personnel et des équipes',
-        'La transparence et la communication'
+        'Flexibilité et adaptation rapide',
+        'Optimisation des coûts et performance immédiate',
+        'Méthodes centrées sur l’impact concret',
+        'Transparence et communication continue'
       ]
     }
   },
 
   {
-    id: '3',
+    id: '1',
     title:
-      'Vous soupirez après une mobilisation et un engagement de vos équipes pour faire face aux multiples changements nécessaires ou imposés à votre organisation?',
-    description: 'Nous travaillons avec vous pour mobiliser et engager vos équipes dans le processus de changement.',
+      'Vous n’avez pas une vue d’ensemble des compétences à développer chez vous ou chez votre personnel pour atteindre vos objectifs stratégiques?',
+    description: 'Nous vous aidons à identifier les compétences clés à développer pour atteindre vos objectifs organisationnels.',
     answer: {
-      title: 'Avec un dévouement axé sur  ',
-      items: ['L’écoute et la collaboration', 'Le professionnalisme', 'La disponibilité', 'L’efficacité et les résultats concrets']
+      title: 'Expertise reconnue et solutions adaptées ',
+      items: [
+        'Plus de 30 ans d’expérience en TI et cybersécurité',
+        'Maîtrise de l’IA, cloud et technologies émergentes',
+        'Solutions efficaces et directement applicables',
+        'Services adaptés aux besoins réels des organisations'
+      ]
     }
   }
 ]
@@ -53,8 +56,8 @@ const WhyUs = () => {
             POURQUOI <span className=' text-gradient'>TALONMBA</span>
           </h2>
           <p className='max-w-2xl mx-auto mt-5 text-xl font-normal text-gray-600 font-pj'>
-            Les spécialistes et stratèges de T-Formation s’appuient sur les données de recherche et des statistiques pour répondre à vos
-            besoins de formation dans une approche efficace et un dévouement sans pareil.
+            Talonmba offre des solutions technologiques, de formation et d’accompagnement adaptées aux besoins des organisations, avec une
+            expertise solide, une approche agile et un engagement total envers ses clients.
           </p>
         </div>
 
@@ -71,7 +74,7 @@ const WhyUs = () => {
                         </div>
                       </div>
                       <div className='pt-4'>
-                        <p className='font-pj text-gradient font-bold text-xl'>{item.answer.title}</p>
+                        <p className='font-pj text-gradient font-bold text-xl text-center'>{item.answer.title}</p>
                         <ul className='list-disc pl-5 mt-2'>
                           {item.answer.items.map((answerItem, answerIndex) => (
                             <li key={answerIndex} className='text-gray-600 font-pj'>
@@ -102,7 +105,7 @@ const WhyUs = () => {
                         </div>
 
                         <div className='pt-4'>
-                          <p className='text-gray-600 font-pj text-gradient font-bold text-xl'>{item.answer.title}</p>
+                          <p className='text-gray-600 font-pj text-gradient font-bold text-xl text-center'>{item.answer.title}</p>
                           <ul className='list-disc pl-5 mt-2'>
                             {item.answer.items.map((answerItem, answerIndex) => (
                               <li key={answerIndex} className='text-gray-600 font-pj'>

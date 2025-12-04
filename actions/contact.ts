@@ -1,6 +1,5 @@
 'use server'
 
-import prisma from '@/lib/prisma'
 import { ContactSchema } from '@/validations'
 import z from 'zod'
 
@@ -13,9 +12,7 @@ export type PrevState = {
 export const handleContactSubmit = async (prevState: PrevState, formData: FormData) => {
   const _data = {
     ...Object.fromEntries(formData),
-    type: prevState?.values?.type || 'General',
-    // category: prevState?.values?.category,
-    formationId: prevState?.values?.formationId
+    type: prevState?.values?.type || 'General'
   }
   const res = ContactSchema.safeParse(_data)
   if (!res.success) {
@@ -26,7 +23,14 @@ export const handleContactSubmit = async (prevState: PrevState, formData: FormDa
     }
   }
   try {
-    await prisma.contact.create({ data: res.data })
+    await fetch(`${process.env.BASE_URL_API}/contacts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        [process.env.GUEST_TOKEN_NAME as string]: process.env.GUEST_TOKEN_VALUE!
+      },
+      body: JSON.stringify(res.data)
+    }).then((r) => r.json())
     return {
       message: 'Votre message a été envoyé avec succès. Nous vous contacterons bientôt.',
       errors: null,
