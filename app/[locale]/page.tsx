@@ -5,7 +5,6 @@ import Stats from '@/components/home/stats'
 import { Skeleton } from '@/components/ui/skeleton'
 import BlogList from './blog/BlogList'
 import { TestimonySlider } from '@/components/home/TestimonySlider'
-import PartnersSection from '@/components/home/partners'
 import OurServices from '@/components/home/our-services'
 
 const FormationHome = () => {
