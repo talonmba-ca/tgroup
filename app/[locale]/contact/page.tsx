@@ -90,6 +90,15 @@ const Contact = () => {
                     defaultValue={state?.values?.message}
                     hasError={state.errors?.message}
                   />
+                  {/* Honeypot field - hidden from users, bots will fill it */}
+                  <input
+                    type='text'
+                    name='website'
+                    autoComplete='off'
+                    tabIndex={-1}
+                    aria-hidden='true'
+                    className='absolute -left-[9999px] opacity-0 h-0 w-0 pointer-events-none'
+                  />
                   {state?.errors?.error && <FormError text={state.errors.error[0]} />}
                   {state?.message && <div className='mb-4 text-green-600'>{state.message}</div>}
                   <SubmitButton />

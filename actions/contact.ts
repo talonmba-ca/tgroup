@@ -10,10 +10,24 @@ export type PrevState = {
 }
 
 export const handleContactSubmit = async (prevState: PrevState, formData: FormData) => {
+  // Honeypot check - if filled, silently reject (bots fill hidden fields)
+  const honeypot = formData.get('website')
+  if (honeypot) {
+    // Return fake success to not tip off bots
+    return {
+      message: 'Votre message a été envoyé avec succès. Nous vous contacterons bientôt.',
+      errors: null,
+      values: null
+    }
+  }
+
   const _data = {
     ...Object.fromEntries(formData),
     type: prevState?.values?.type || 'General'
   }
+  // Remove honeypot field from data
+  delete (_data as Record<string, unknown>).website
+
   const res = ContactSchema.safeParse(_data)
   if (!res.success) {
     return {
